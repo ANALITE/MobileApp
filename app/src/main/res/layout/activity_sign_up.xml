@@ -11,10 +11,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".data.ui.LoginActivity">
+    tools:context=".data.ui.SignUpActivity">
+
+    <ProgressBar
+        android:id="@+id/signup_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 
     <ImageButton
-        android:id="@+id/login_back"
+        android:id="@+id/signup_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
@@ -26,69 +34,81 @@
         app:srcCompat="@drawable/back_button" />
 
     <TextView
-        android:id="@+id/login_tittle"
+        android:id="@+id/signup_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log in"
+        android:text="Create Account"
         android:textSize="30sp"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"/>
-
-    <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone" />
+        android:textColor="#CFCFCF"/>
 
     <ScrollView
-        android:id="@+id/login_form"
+        android:id="@+id/signup_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp">
 
         <LinearLayout
-            android:id="@+id/email_login_form"
+            android:id="@+id/email_signup_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/username_text"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="#07000000"
+                android:gravity="left"
+                android:text="Enter your username"
+                android:textColor="#CFCFCF"
+                android:textSize="20sp" />
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="#9bffff">
+                android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0dp"
+                    android:hint=""
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
+                    android:background="#9bffff"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
 
+            <TextView
+                android:id="@+id/password_text"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#07000000"
+                android:gravity="left"
+                android:text="Choose a password"
+                android:textColor="#CFCFCF"
+                android:textSize="20sp" />
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:background="#9bffff">
+                android:layout_height="wrap_content">
 
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="0dp"
+                    android:hint=""
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
+                    android:background="#9bffff"
                     android:singleLine="true" />
 
             </android.support.design.widget.TextInputLayout>
@@ -98,35 +118,13 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="50dp"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/button_rad"
-                android:text="Sign In"
-                android:textSize="18sp"
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/or"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
                 android:layout_marginTop="40dp"
-                android:background="#07000000"
-                android:gravity="center"
-                android:text="You don't have an account?"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp" />
-
-            <Button
-                android:id="@+id/email_sign_up_button"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
-                android:layout_marginTop="5dp"
                 android:background="@drawable/button_rad"
-                android:text="Free Sign UP"
-                android:textSize="15sp"
-                android:textColor="#FFFFFF" />
+                android:text="Sign Up"
+                android:textSize="18sp"
+                android:textColor="#CFCFCF" />
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
