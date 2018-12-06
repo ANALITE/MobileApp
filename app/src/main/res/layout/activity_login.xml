@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".data.ui.LoginActivity">
+    tools:context=".data.ui.LogInActivity">
 
     <ImageButton
         android:id="@+id/login_back"
@@ -101,7 +101,7 @@
                 android:layout_marginTop="30dp"
                 android:background="@drawable/button_rad"
                 android:text="Sign In"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -117,7 +117,7 @@
                 android:textSize="14sp" />
 
             <Button
-                android:id="@+id/email_sign_up_button"
+                android:id="@+id/free_sign_up_button"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="50dp"

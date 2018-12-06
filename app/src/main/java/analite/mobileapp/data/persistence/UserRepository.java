@@ -1,4 +1,4 @@
-package analite.mobileapp.data.Persistence;
+package analite.mobileapp.data.persistence;
 
 import analite.mobileapp.data.entities.User;
 

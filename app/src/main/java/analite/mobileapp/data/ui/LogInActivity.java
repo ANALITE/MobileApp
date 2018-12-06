@@ -20,7 +20,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -36,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import analite.mobileapp.R;
-import analite.mobileapp.data.Persistence.SimpleUserRepository;
+import analite.mobileapp.data.persistence.SimpleUserRepository;
 import analite.mobileapp.data.entities.User;
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -44,7 +43,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class LogInActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -69,6 +68,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private ImageButton mBackButton;
     private Button mEmailSignInButton;
+    private Button mSignUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mBackButton = (ImageButton) findViewById(R.id.login_back);
         mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        mSignUpButton = (Button) findViewById(R.id.free_sign_up_button);
 
         actionListenersInitialization();
     }
@@ -103,7 +104,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mBackButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(LoginActivity.this,InitActivity.class );
+                Intent intent= new Intent(LogInActivity.this,InitActivity.class );
                 startActivity(intent);
             }
         });
@@ -111,6 +112,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
+            }
+        });
+        mSignUpButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(LogInActivity.this,SignUpActivity.class );
+                startActivity(intent);
             }
         });
 
@@ -293,7 +301,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(LoginActivity.this,
+                new ArrayAdapter<>(LogInActivity.this,
                         android.R.layout.simple_dropdown_item_1line, emailAddressCollection);
 
         mEmailView.setAdapter(adapter);
@@ -350,7 +358,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
-                finish();
+                Intent intent= new Intent(LogInActivity.this,HomeActivity.class );
+                startActivity(intent);
             } else {
                 mEmailView.setError(getString(R.string.error_incorrect_user));
                 mEmailView.requestFocus();

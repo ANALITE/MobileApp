@@ -1,6 +1,4 @@
-package analite.mobileapp.data.Persistence;
-
-import android.util.Log;
+package analite.mobileapp.data.persistence;
 
 import java.util.ArrayList;
 import java.util.List;

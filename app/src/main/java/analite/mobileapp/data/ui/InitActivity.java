@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import analite.mobileapp.R;
-import analite.mobileapp.data.Persistence.SimpleUserRepository;
 
 public class InitActivity extends AppCompatActivity {
 
@@ -35,7 +34,7 @@ public class InitActivity extends AppCompatActivity {
         buttonSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(InitActivity.this,LoginActivity.class );
+                Intent intent= new Intent(InitActivity.this,LogInActivity.class );
                 //intent.putExtra("UserRepo",user_repo);
                 startActivity(intent);
             }

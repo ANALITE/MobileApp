@@ -23,8 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".data.ui.LoginActivity" />
+        <activity android:name=".data.ui.LogInActivity" />
         <activity android:name=".data.ui.SignUpActivity" />
+        <activity
+            android:name=".data.ui.HomeActivity"
+            android:label="@string/title_activity_home"></activity>
     </application>
 
 </manifest>

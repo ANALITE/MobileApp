@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="#f2f2f2"
+    tools:context=".data.fragments.DashboardFragment">
+
+    <TextView
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#f2f2f2"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="Analyze"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/border">
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/hashtag" />
+
+        <EditText
+            android:id="@+id/hash_tag_entry"
+            android:layout_width="268dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:hint="HashTag..." />
+
+        <ImageButton
+            android:id="@+id/hash_tag_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:src="@android:drawable/ic_menu_search" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultTitle"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#f2f2f2"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="Result" />
+        <!--android:visibility="gone"/>-->
+
+    <ScrollView
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <!--android:visibility="gone">-->
+
+        <GridLayout
+            android:columnCount="2"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    
+                    <ImageView
+                        android:src="@drawable/TrendGraph"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp" />
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6F6F6F"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="Tweets Trend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/PieGraph"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp" />
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6F6F6F"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="Identified Emotions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/BarGraph"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp" />
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6F6F6F"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="Sentiments Intensity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:elevation="6dp"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/WordCloud"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp" />
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textColor="#6F6F6F"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="Terms Frecuency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </GridLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
