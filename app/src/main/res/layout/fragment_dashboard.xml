@@ -10,6 +10,7 @@
     tools:context=".data.fragments.DashboardFragment">
 
     <TextView
+        android:id="@+id/analyze_title"
         android:gravity="center"
         android:textAlignment="center"
         android:layout_marginTop="80dp"
@@ -18,8 +19,7 @@
         android:background="#f2f2f2"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:text="Analyze"
-        android:visibility="gone"/>
+        android:text="Analyze" />
 
     <LinearLayout
         android:layout_marginTop="32dp"
@@ -52,8 +52,17 @@
 
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/hash_tag_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
     <TextView
-        android:id="@+id/resultTitle"
+        android:id="@+id/result_title"
         android:gravity="center"
         android:textAlignment="center"
         android:layout_marginTop="30dp"
@@ -62,14 +71,15 @@
         android:background="#f2f2f2"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:text="Result" />
-        <!--android:visibility="gone"/>-->
+        android:text="Result"
+        android:visibility="gone"/>
 
     <ScrollView
+        android:id="@+id/result_view"
         android:background="#FFFFFF"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        <!--android:visibility="gone">-->
+        android:layout_height="match_parent"
+        android:visibility="gone" >
 
         <GridLayout
             android:columnCount="2"
@@ -78,7 +88,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/TrendGraph_card"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -96,7 +108,7 @@
                     android:layout_height="match_parent">
                     
                     <ImageView
-                        android:src="@drawable/TrendGraph"
+                        android:src="@drawable/trend_graph"
                         android:layout_width="128dp"
                         android:layout_height="128dp" />
 
@@ -111,9 +123,11 @@
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/PieGraph_card"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -131,7 +145,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/PieGraph"
+                        android:src="@drawable/pie_graph"
                         android:layout_width="128dp"
                         android:layout_height="128dp" />
 
@@ -140,15 +154,17 @@
                         android:textColor="#6F6F6F"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:text="Identified Emotions"
+                        android:text="Found Emotions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/BarGraph_card"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -166,7 +182,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/BarGraph"
+                        android:src="@drawable/bar_graph"
                         android:layout_width="128dp"
                         android:layout_height="128dp" />
 
@@ -175,15 +191,17 @@
                         android:textColor="#6F6F6F"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:text="Sentiments Intensity"
+                        android:text="Emotions Intensity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/WordCloud_card"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -201,7 +219,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/WordCloud"
+                        android:src="@drawable/word_cloud"
                         android:layout_width="128dp"
                         android:layout_height="128dp" />
 
@@ -210,13 +228,13 @@
                         android:textColor="#6F6F6F"
                         android:textStyle="bold"
                         android:textSize="16sp"
-                        android:text="Terms Frecuency"
+                        android:text="Terms Frequency"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
         </GridLayout>
 
